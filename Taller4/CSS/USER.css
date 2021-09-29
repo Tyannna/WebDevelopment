@@ -1,0 +1,97 @@
+html {
+    background-color: #fc9e68;
+    font-family: Arial;
+       }
+  
+    h1 { font-family: Arial;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    text-align: center;
+    padding: 20px 0;
+     border-radius:20px;
+     margin:auto;
+     }
+
+  
+  form{
+      width:500px;
+      align-items: center;
+      font-family: Arial;
+      padding:50px;
+      border-radius:50px;
+      margin:auto;
+      background-color:#ffefaf;
+      border:1px solid #000000;
+      
+  
+  }
+  
+  form label{
+      width:100%;
+      display:inline-block;
+      font-family: Arial;
+  }
+  
+  
+  form input[type="text"],[type="password"]{
+      width:90%;
+      padding:5px 13px;
+      border:1px solid #575757;
+      border-radius:3px;
+      background-color:#f6f6f6;
+      margin:15px 0;
+      display:inline-block;
+  }
+
+
+  form input[type="submit"],[type="reset"]{
+    width:100%;
+    font-size: 16px;
+    padding:8px 16px;
+    margin-top:12px;
+    color: rgb(0, 0, 0);
+    border:1px solid #baad00;
+    border-radius:5px;
+    display:block;
+    font-weight:bold;
+    background-color: #e2cc4f; 
+    cursor:pointer;
+    display:inline-block;
+  }
+
+  select {
+    margin-top: 7px;
+    color: rgb(107, 107, 107);
+    border:1px solid #575757;
+    border-radius: 3px;
+    padding:1px 13px;
+    background:#ffffff;
+    height:28px;
+}
+ 
+
+  #this{
+         color: rgb(107, 107, 107);
+         border:1px solid #575757;
+         border-radius: 3px;
+         padding:1px 13px;
+         background:#ffffff;
+         height:30px;
+         width:45%;
+         -webkit-appearance: none;
+  }
+
+  #other{
+    color: rgb(107, 107, 107);
+    border:1px solid #575757;
+    border-radius: 3px;
+    padding:1px 13px;
+    background:#ffffff;
+    height:28px;
+    width:96%;
+    -webkit-appearance: none;
+}
+
+  
+
+  
