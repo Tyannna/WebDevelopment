@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    
+
+    <title>Document</title>
+</head>
+
+<body background="images/background.jpg">
+    <br>
+    <h1><center><strong>GRILLA</strong></center></h1>
+    <br>
+
+<div class="container-lg shadow-lg p-3 mb-5 bg-body rounded-5">
+
+            <div class="section">
+                <center><button class="btn btn-dark" id="esteboton" onclick="traer()">CARGAR JSON </button></center>
+
+            <br>
+                
+                <table class="table" id="tabla">
+                    <thead class="thead-dark">
+                        <tr>
+                        <td colspan="9">
+            
+                        <input id="buscar" type="text" class="form-control" placeholder="Escriba lo que desea filtrar"/>
+            
+            
+                        </td>
+                        </tr>
+                        
+                    <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Coordinates</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Website</th>
+                            <th scope="col">Company</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody id="fill">
+                    
+                    </tbody>
+                </table>
+            <br>
+
+
+
+        </div>
+
+        <script>
+            var contenido = document.querySelector("#fill")
+            function traer(){
+                fetch('https://jsonplaceholder.typicode.com/users')
+                .then(res => res.json())
+                .then(data => {
+                    //console.log(data)
+                    tabla(data)
+                })
+            }
+        
+            function tabla(datos){
+            //	console.log(datos)
+                var espacio = ", ";
+                contenido.innerHTML = ''
+                for(let valor of datos){
+                    contenido.innerHTML += `
+                <tr>
+                  <th scope="row">${valor.id}</th>
+                  <td>${valor.name}</td>
+                  <td>${valor.username}</td>
+                  <td>${valor.email}</td>
+                  <td>${valor.address.street.concat(valor.address.suite,espacio,valor.address.city, espacio,valor.address.zipcode ) }</td>
+                  <td>${valor.address.geo.lat.concat(espacio, valor.address.geo.lng)}</td>
+                  <td>${valor.phone}</td>
+                  <td>${valor.website}</td>
+                  <td>${valor.company.name.concat(espacio, valor.company.catchPhrase, espacio, valor.company.bs)}</td>
+                </tr>
+        
+                    `
+                }
+            }
+            </script>
+        
+        <script src="JS/ajax.js"> </script>
+
+        <form action="../Index.html">
+        <center><input class="btn btn-dark" type="submit" value="REGRESAR AL MENU"></center>
+        </form> 
+</div>
+
+
+
+</body>
+</html>
